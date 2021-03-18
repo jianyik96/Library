@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Corner Library</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container  pl-3 pr-3">
+        <div class="logo text-center">
+            <img class="img-fluid" width="200" src="../img/logo.png" alt="Greatech Logo" />
+            <h5>Reading Corner Library</h3>
+            <a href="../../index.html"><button class="btn text-center btn-outline-info">Borrow Book</button></a>
+        </div>
+        <div class="text-left">
+            <form id='myForm'>
+
+                <div class="mt-3">
+                    <label for="lemployeeid"><b>Employee ID</b></label>
+                    <input id="id" name="EmployeeID" class="form-control" type="text" id="employee_id" placeholder="Employee ID" value=""/>
+                </div>
+                <div class="mt-3">
+                    <label><b>Book Name</b></label>
+                    <select id="bookname" class="form-control">
+                        <option></option>
+                    </select>
+                </div>
+                <br>
+                <span class="badge badge-danger">Borrow Book Duration: Two Week</span> 
+                <button type="submit" class="mt-2 btn btn-md btn-success btn-block" id="submit">Submit</button>
+            </form>
+            <!-- <button id="submit" onclick="GoToBookPage()">hello</button> -->
+            <h6 id="result" class="text-center text-danger"></h6>
+            <h6 id="result-success" class="text-center text-success"></h6>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="module" src="../js/helper/firebasePostR.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="../constants/bookList.js"></script>
+    <script type="text/javascript" src="../../script.js"></script>
+</body>
+</html>
